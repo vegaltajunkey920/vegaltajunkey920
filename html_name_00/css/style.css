@@ -1,0 +1,329 @@
+body {
+    text-align: center;
+    font-size: 16px;
+    line-height: 1.5;
+    width:1200px
+  }
+  
+  nav {
+    height: 121px;
+    font-size: 21px;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  nav img {
+    margin-left: 50px;
+    margin-top: 20px;
+    height: 81px;
+  }
+  
+  nav ul {
+    display: flex;
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+  
+  nav ul li {
+    margin-right: 50px;
+  }
+  
+  nav ul li a {
+    text-decoration: none;
+    color: #000000;
+  }
+
+  header {
+    position: relative;
+    color: white;
+  }
+  /* relativeは親要素で、基本的にはabsluteとセットで使う */
+  
+  header img {
+    width: 1200px;
+    height: 440px;
+  }
+  
+  header .apple {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  /* absolulteは子要素・・・親要素に対する位置指定 */
+  /* relativeを親要素にしていて、親要素の位置を初期値に */
+  /* していれば、起点は一番左上 */
+  /* transform がない状態だと、要素（文字「セカイを・・・」が） */
+  /* の最初の文字の「セ」が中央に来ている、という段階 */
+  /* これを中央に持ってくるのがtransformの役割 */
+  /* -50%,-50%が中央に寄せる方法 */
+  /* 理屈は後日 */
+
+  /* tag +.クラスで限定することもできる */
+  
+  header .apple h1 {
+    font-size: 35px;
+    margin-bottom: 30px;
+  }
+  
+  header .apple p {
+    font-size: 24px;
+  }
+
+  h2 {
+    font-size: 24px;
+    color: #ffd61a;
+    margin-top: 60px;
+    margin-bottom: 30px;
+    font-weight: 700;
+  }
+
+.sub-title{
+  font-size: 18px;
+  margin-bottom: 60px;
+  margin-top: 30px;
+}
+
+  #about p {
+    margin-bottom: 40px;
+  }
+  
+  #about .grape {
+    margin-top: 80px;
+    max-width: 1200px;
+    display: flex;
+    justify-content:center;
+    /* flexのときに使う */
+    margin-bottom: 60px;
+    overflow:hidden
+  }
+
+.grape img{
+  width: 350px;
+  height: 240px;
+}
+
+  #course h2 {
+    color: #222222;
+  }
+  
+  #course p {
+    margin-bottom: 60px;
+  }
+  
+  .column {
+    display: flex;
+  }
+  
+  .column img {
+    width: 600px;
+    height: 405px;
+  }
+  
+  .column .description {
+    width:600px;
+    text-align: left;
+    background-color: #fafafa;
+  }
+  /* paddingを使うはず */
+  
+  .column .description .row {
+    margin-left: 50px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .column .description h3 {
+    margin-bottom: 40px;
+    font-size: 24px;
+    font-weight: 700;
+    color: #222222;
+  }
+
+  .column .description2 {
+    width:50%;
+    text-align: left;
+    background-color: #fafafa;
+  }
+
+  .column .description2 .row {
+    margin-left: 70px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .column .description2 h3 {
+    margin-bottom: 40px;
+    font-size: 24px;
+    font-weight:700;
+    color: #222222;
+  }
+  
+
+  #news h2{
+    margin-top: 60px;  
+  }
+
+  #news .sub-title{
+    margin-bottom: 60px;
+  }
+  
+  #news .articles {
+    display: flex;
+    margin-left: 120px;
+    gap: 30px;
+  }
+  
+  #news .articles .article {
+    text-align: left;
+  }
+  
+  #news .articles img {
+    width: 300px;
+    height: 200px;
+    margin-bottom: 30px;
+  }
+  
+  #news .articles .date {
+    margin-bottom: 24px;
+  }
+
+  .article p{
+    font-size: 12px;
+    line-height: 2;
+  }
+
+   .btn {
+    font-size: 18px;
+    display: block;
+    width: 300px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: #ffffff;
+    background-color: #ffd61a;
+    margin-left: 450px;
+    margin-top: 30px;
+    margin-bottom: 120px;
+  }
+  
+  #access {
+    background-color: #fafafa;
+  }
+  
+  #access h2 {
+    color: #000;
+    padding-top: 60px;
+  }
+  
+  #access dl {
+    justify-content: center;
+    width: 500px;
+    margin: auto;
+    margin-top: 60px;
+    margin-bottom: 60px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  #access dl dt {
+    width: 140px;
+    text-align-last: left;
+    margin-bottom: 30px;
+  }
+  
+  #access dl dd {
+    width: 360px;
+    text-align: left;
+  }
+
+  #access .kunio{
+    margin-bottom: 60px;
+  }
+
+  #contact h2 {
+    color: #000;
+  }
+  
+  #contact p {
+    margin-bottom: 30px;
+  }
+
+  form {
+    width: 640px;
+    margin-left: 280px;
+    margin-top:70px;
+  }
+  
+form dt{
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 600;
+}
+
+  form dl {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: left;
+  }
+  
+  form dl dt {
+    width: 240px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    height: 36px;
+  }
+  
+  form dl dd {
+    width: 400px;
+    border-bottom: 1px solid black;
+  }
+  
+  form dl dd input {
+    margin-left: 8px;
+    border: #bfbfbf 1px solid;
+    width: 328px;
+    height: 36px;
+  }
+  
+  span {
+  font-size: 14px;
+  line-height: 24px;
+ }
+
+  form dl dd textarea {
+    height: 200px;
+    width: 328px;
+    border: #bfbfbf 1px solid;
+  }
+  
+  form .radio-button {
+    font-size: 14px;
+    margin-bottom: 24px;
+  }
+  
+  form .radio-button .checkbox {
+    margin-right: 40px;
+  }
+  
+  form .radio-button input {
+    width: 16px;
+    height: 24px;
+  }
+
+  #send-button{
+    margin-bottom: 140px;
+  }
+
+  footer {
+    font-size: 18px;
+    color: #ffffff;
+    background-color: #707070;
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+  
+  
