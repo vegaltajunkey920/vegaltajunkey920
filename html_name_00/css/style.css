@@ -4,6 +4,10 @@ body {
     line-height: 1.5;
     width:1200px
   }
+
+body {
+  margin:0 auto;
+}
   
   nav {
     height: 121px;
@@ -149,7 +153,7 @@ body {
   }
 
   .column .description2 .row {
-    margin-left: 70px;
+    margin-left: 118px;
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -163,7 +167,6 @@ body {
     color: #222222;
   }
   
-
   #news h2{
     margin-top: 60px;  
   }
@@ -192,6 +195,17 @@ body {
     margin-bottom: 24px;
   }
 
+  .articles img{
+    width: 100%;
+    cursor: pointer;
+    transition-duration: 0.3s;
+  }
+
+  .articles:hover img{
+    opacity: 0.6;
+    transition-duration: 0.3s;
+  }
+
   .article p{
     font-size: 12px;
     line-height: 2;
@@ -208,6 +222,10 @@ body {
     margin-left: 450px;
     margin-top: 30px;
     margin-bottom: 120px;
+  }
+
+  a:hover{
+    opacity: 0.6;
   }
   
   #access {
@@ -257,8 +275,8 @@ body {
     margin-left: 280px;
     margin-top:70px;
   }
-  
-form dt{
+
+  form dt{
   font-size: 12px;
   line-height: 16px;
   font-weight: 600;
@@ -268,7 +286,13 @@ form dt{
     display: flex;
     flex-wrap: wrap;
     text-align: left;
+    border-top: 2px solid #bfbfbf;
+    border-bottom:2px solid #bfbfbf;
   }
+
+  form dd dt {
+    border-right:1px solid #bfbfbf;
+   }
   
   form dl dt {
     width: 240px;
@@ -279,19 +303,27 @@ form dt{
   
   form dl dd {
     width: 400px;
-    border-bottom: 1px solid black;
+    margin-top: 8px;
   }
   
   form dl dd input {
     margin-left: 8px;
-    border: #bfbfbf 1px solid;
     width: 328px;
     height: 36px;
+    border: #bfbfbf 1px solid;
   }
-  
+
+  select {
+    margin-left: 8px;
+    width: 334px;
+    height: 36px;
+    border: #bfbfbf 1px solid;
+  }
+
   span {
-  font-size: 14px;
+  font-size: 12px;
   line-height: 24px;
+  margin-left: 24px;
  }
 
   form dl dd textarea {
@@ -300,17 +332,13 @@ form dt{
     border: #bfbfbf 1px solid;
   }
   
-  form .radio-button {
+  form .check-button {
     font-size: 14px;
     margin-bottom: 24px;
   }
   
-  form .radio-button .checkbox {
-    margin-right: 40px;
-  }
-  
-  form .radio-button input {
-    width: 16px;
+  form .check-button input {
+    width: 24px;
     height: 24px;
   }
 

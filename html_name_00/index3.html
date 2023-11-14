@@ -54,7 +54,6 @@
                         <img src="./img/about_03.jpg">
                         <img src="./img/about_02.jpg">
                         <img src="./img/about_01.jpg">
-                        <!-- 1枚のものがない -->
                     </div>
                 </div>
             </div>
@@ -111,7 +110,7 @@
             <div class="sub-title">ニュース</div>
             <div class="orange">
                 <div class="articles">
-                    <div class="col">
+                    <div>
                         <div class="article">
                             <img src="./img/news_img.jpg" alt="">
                             <p class="date">2023/11/11</p>
@@ -120,7 +119,7 @@
                                 「Kosuge Pizza」が渋谷でオープンしました!</p>
                         </div>
                     </div>
-                    <div class="col">
+                    <div>
                         <div class="article">
                             <img src="./img/news_img.jpg" alt="">
                             <p class="date">2023/11/11</p>
@@ -129,7 +128,7 @@
                                 「Kosuge Pizza」が渋谷でオープンしました!</p>
                         </div>
                     </div>
-                    <div class="col">
+                    <div>
                         <div class="article">
                             <img src="./img/news_img.jpg" alt="">
                             <p class="date">2023/11/11</p>
@@ -172,7 +171,7 @@
          <form action="" method="post">
                <!--個人情報の場合はpostを入れる。PHPに関連する模様-->
                 <dl>
-                 <dt>名前</dt>
+                 <dt >名前</dt>
                  <dd><input type="text" name="名前" class="form-text"/></dd>
                  <dt>カナ</dt>
                  <dd><input type="text" name="カナ" class="form-text"/></dd>
@@ -180,9 +179,18 @@
                  <dd><input type="email" name="メールアドレス" class="form-text"/></dd>
                  <dt>チーズアカデミーを<br>
                     知ったきっかけ</dt>
-                 <dd><input type="email" name="チーズアカデミーを知ったきっかけ" class="form-text"></dd>
+                 <dd class="select">
+                    <select name="test">
+                     <option value="">選択してください</option>
+                     <option value="test1">google選択</option>
+                     <option value="test2">SNS</option>
+                     <option value="test3">紹介</option>
+                     <option value="test4">たまたま通りかかった</option>
+                     <option value="test5">その他</option>
+                    </select>
+                    </dd>
                  <dt>志望動機</dt>
-                 <dd class="radio-button">
+                 <dd class="check-button">
                     <div class="checkbox"><input type="checkbox" name="" id=""><span>起業したい</span> </div>
                     <div class="checkbox"><input type="checkbox" name="" id=""><span>チーズ系企業に就職・転職したい</span></div>
                     <div class="checkbox"><input type="checkbox" name="" id=""><span>チーズと関わる仕事をしており、仕事に生かしたい</span></div>
