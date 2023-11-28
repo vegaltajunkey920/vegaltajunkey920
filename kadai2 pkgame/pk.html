@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PKゲーム</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/pk.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+
+    <body>
+        <header id="header">
+            <span class="gametitle">PKゲーム</span>
+        </header> 
+</div>
+    <main>
+         <div id = gazou></div>
+         <div id="btn-box">
+                    <button id = 1 onclick = "R_Click(0);">右上</button>
+                    <button id = 2 onclick = "R_Click(1);">右下</button>
+                    <button id = 3 onclick = "R_Click(2);">正面</button>
+                    <button id = 4 onclick = "R_Click(3);">左下</button>
+                    <button id = 5 onclick = "R_Click(4);">左上</button>
+                   </div>
+              </div>
+            <div class="message"> 
+                <div><p id="line1">どの方向に蹴る？？
+                </p></div>
+                <div><p id="line2"></p></div>
+                <div><p id="line3"></p></div>
+        </main>
+    </div>
+
+<script>   
+$("#gazou").html('<img src="PKsen.png">');
+
+ function R_Click(p_shoot_r) {
+ $("#line1").fadeOut(0); 
+ $("#line1").html("シュート！！" );
+ $("#line1").fadeIn(0); 
+ $("#line2").fadeOut(0);
+ $("#btn-box").hide(0);
+
+ let p_shoot = ['右上','右下','正面','左下','左上'];
+ let shoot = ['右上','右下','正面','左下','左上',''];
+ let shoot_r = Math.floor( Math.random()*6);
+
+if(shoot_r === p_shoot_r){
+ $("#line2").fadeIn(0); 
+ $("#line2").text("キーパーにコースを読まれている!PK失敗!");
+ $("#gazou").html('<img src="save.png">');
+
+} else if(shoot_r === 5){
+ $("#line2").fadeIn(0); 
+ $("#line2").text("ゴールポストに当たった！！!PK失敗!");
+ $("#gazou").html('<img src="post.png">');
+
+} else {
+ $("#line2").fadeIn(0); 
+ $("#line2").text("決まった！ゴール！！");
+ $("#gazou").html('<img src="goal.png">');
+}}
+    </script>
+    </body>
+</div>
+</html>
+
