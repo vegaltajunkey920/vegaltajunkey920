@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <title>Chatアプリ</title>
+    <link rel="stylesheet" href="css/sample.css">
+
+<body>
+    <!-- コンテンツ表示画面 -->
+    <div id="output"></div>
+      <div id="inputarea">
+        <div>
+         <input type="text" id="uname">
+        </div>
+        <div>
+            <textarea name="" id="text" cols="55" rows="13"></textarea>
+            <button id="send">送信</button>
+        </div>
+    </div>
+    </div>
+
+    <!--/ コンテンツ表示画面 -->
+    <!-- JQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- JQuery -->
+
+    <!--** 以下Firebase **-->
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+        import { getDatabase, ref, push, set, update, remove, onChildAdded, onChildChanged, onChildRemoved} 
+        from "https://cdnjs.cloudflare.com/ajax/libs/firebase/10.7.1/firebase-database.js";
+
+        // Your web app's Firebase configuration
+
+        const firebaseConfig = {
+            apiKey: "",
+            authDomain: "fir-demo-3115c.firebaseapp.com",
+            projectId: "fir-demo-3115c",
+            storageBucket: "fir-demo-3115c.appspot.com",
+            messagingSenderId: "58914900889",
+            appId: "1:58914900889:web:e7f324c60ed839a2ef6108"
+    };
+
+        // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const db = getDatabase(app); // RealtimeDBに接続
+    const dbRef = ref(db, "chat"); // RealtimeDB内の"chat"を使う
+
+    $("#send").on("click", function () {
+    const now = new Date();
+    const msg = {
+        uname: $("#uname").val(),
+        text: $("#text").val(),
+        timestamp: now.toISOString() // タイムスタンプを追加
+    };
+    const newPostRef = push(dbRef); // ユニークキーの生成
+    set(newPostRef, msg); // DBに値を送信
+});
+
+
+
+
+onChildAdded(dbRef, function(data){   
+    const msg = data.val();
+    const key = data.key; 
+
+
+    const timestamp = new Date(msg.timestamp);
+    const formattedTime = timestamp.toLocaleString(); 
+
+    let h = '<p id="'+key+'">';
+    h += '<img src="tsubasa.png" width="70" id="'+key+'_update">'; 
+    h += '<br>';
+    h += '<span contentEditable="true" id="'+key+'_update">'+msg.text+'</span>';
+    h += '<br>';
+    h += '<span class="timestamp">' + formattedTime + '</span>'; 
+    h += '<br>';
+    h += '<span class="remove" data-key="'+key+'">削除</span>';
+    h += '<span class="update" data-key="'+key+'">更新</span>';
+    h += '</p>';
+    $("#output").append(h);
+    document.getElementById("output").scrollTop = document.getElementById("output").scrollHeight;
+});
+
+$(send).ready(function() {
+    $('output').keypress(function(e) {
+        if (e.which == 13) { // 13 はエンターキーのキーコード
+            $('#output').submit();
+        }
+    });
+});
+
+
+$("#output").on("click", ".remove", function(){
+    const key = $(this).attr("data-key");
+    const remove_item = ref(db,"chat/"+key);
+    remove(remove_item); 
+});
+
+$("#output").on("click", ".update", function(){
+    const key = $(this).attr("data-key");
+    update(ref(db, "chat/"+key), {
+			text: $("#"+key+'_update').html()
+    });
+});
+
+onChildRemoved(dbRef,(date)=>{
+    $("#"+date.key).remove();
+});
+
+onChildChanged(dbRef,(date)=>{
+    $("#"+date.key+'_update').html(date.val().text);
+    $("#"+date.key+'_update').fadeOut(800).fadeIn(800);
+});
+
+</script>
+</body>
+</html>
