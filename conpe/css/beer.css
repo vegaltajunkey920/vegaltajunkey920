@@ -1,0 +1,138 @@
+@charset "UTF-8" ;
+
+body {
+    display: flex;
+    justify-content: center; 
+    padding: 20px; 
+}
+
+.container {
+    max-width: 1200px;
+    width: 100%;
+}
+
+#title {
+    text-align: center; 
+    font-size: 45px; 
+    padding: 10px; 
+    font-weight: 600;
+    color: orange;
+}
+
+#buttons {
+    display: flex; 
+    justify-content: space-between; 
+    justify-content: space-around; 
+    align-items: center; 
+    margin: 20px; 
+}
+
+#buttons button {
+    width: 250px; 
+    height: 150px; 
+    font-size: 30px; 
+    color: red;
+    font-weight: 800;
+    background-size: contain;
+    background-repeat: no-repeat; 
+    background-position: center; 
+    padding: 20px; 
+    cursor: pointer; 
+    margin-bottom: 10px;
+    cursor: pointer;
+    border-radius: 30px;
+}
+
+#buttons div {
+    text-align: center;  
+}
+
+#buttons button:hover {
+    background-color:gold;
+    color: black;
+    border: 2px solid #c70505;
+}
+
+#beer {
+    background-image: url('/image/beer.png');
+}
+
+#sake{
+    background-image: url('/image/nomu.png');
+}
+
+#send-mail{
+    background-image: url('/image/mail.png');
+}
+
+#annouce {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px; 
+}
+
+#announcement{
+    background-image: url('/image/hamada.png');
+    width: 250px;
+    height: 150px;
+    font-size: 30px; 
+    color: red;
+    font-weight: 800;
+    background-size: cover; 
+    background-position: center; 
+    cursor: pointer; 
+    background-size: contain; 
+    background-repeat: no-repeat; 
+    cursor: pointer;
+    border-radius: 30px;
+    margin-bottom: 10px;
+}
+
+#announcement:hover {
+    background-color:gold; 
+    color: blue; 
+    border: 2px solid #c70505;
+}
+
+#summary{
+    margin-top: 50px;
+}
+
+.info-table {
+    width: 100%; 
+    border-collapse: collapse;
+    text-align: left; 
+    margin-bottom: 20px;
+}
+
+.info-table th, .info-table td {
+    border: 1px solid #ddd; 
+    padding: 8px;
+}
+
+#table-container{
+    margin-top: 15px;
+}
+
+#count {
+    color: blue; 
+    font-weight: bold; 
+}
+
+#sakepower{
+    color: blue; 
+    font-weight: bold; 
+}
+
+#must{
+    color: blue; 
+    font-weight: bold; 
+}
+
+#everyone{
+    color: blue; 
+    font-weight: bold; 
+}
+
