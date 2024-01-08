@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <script src="path/to/your/script.js"></script>
+    <title>飲み会生成アプリ</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/beer.css">
+</head>
+<body>
+<div class="container">
+    <div id="title">
+        <span class="beer-icon">&#127867;</span> 
+        飲み会生成アプリver1.0
+        <span class="beer-icon">&#127862;</span>
+    </div>
+    
+  <div id="buttons">
+  <div>
+    <button id="beer">飲みたい！</button>
+    <div id="count"></div>
+  </div>
+
+  <div>
+    <button id="sake"></button>
+    <div id="sakepower"></div>
+  </div>
+
+  <div>
+    <button id="send-mail"></button>
+    <div id="must">絶対飲みたい！（直談判）</div>
+  </div>
+</div>
+
+    <div id="annouce">
+        <button id="announcement" disabled>結果発表！</button>
+    </div>
+
+    <div id="summary">
+        <table class="info-table">
+            <tr>
+                <th>項目</th>
+                <th>詳細</th>
+            </tr>
+            <tr>
+                <td>回答数</td>
+                <td id="response-count"></td>
+            </tr>
+            <tr>
+                <td>最少催行人数</td>
+                <td id="result"></td>
+            </tr>
+            <tr>
+                <td>適正価格帯</td>
+                <td id="costaverage"></td>
+            </tr>
+            <tr>
+                <td>一番人気</td>
+                <td id="most-frequent-place"></td>
+            </tr>
+            <tr>
+                <td>おすすめのお店</td>
+                <td id="recommended-restaurant"></td>
+            </tr>
+            <tr>
+                <td>集合場所・時間</td>
+                <td id="meeting"></td>
+            </tr>
+            <tr>
+                <td>ルール</td>
+                <td id="rule"></td>
+            </tr>
+        </table>
+        <div id="everyone">みんなの回答</div>
+        <div id="table-container"></div> 
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/script.js"></script>
+
+    <script>
+        $("#summary").fadeOut(0);
+        // 最初は表示させない。
+
+        $(document).ready(function() {
+            let meetingTime = new Date();
+            meetingTime.setHours(0, 31, 0); // 0時31分に設定（終日使えるようにするため。実際には変更する）
+            // 30分前の時刻を計算
+            let activeTime = new Date(meetingTime.getTime() - 30 * 60 * 1000);
+            // 現在時刻が30分前の時刻を過ぎているか確認
+            checkTime();
+            function checkTime() {
+                let now = new Date();
+                if (now >= activeTime) {
+                    // 現在時刻が30分前の時刻を過ぎていればボタンをアクティブにする
+                    $("#announcement").prop('disabled', false);
+                } else {
+                    // そうでなければ1分後に再度確認
+                    setTimeout(checkTime, 60000);
+                }
+            }
+            $("#announcement").on("click", function() {
+                $("#summary").fadeIn(3000);
+                $(this).prop('disabled', true);
+            });
+        });
+    </script>
+</body>
+</html>
