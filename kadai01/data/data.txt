@@ -1,0 +1,8 @@
+2024-01-16 12:38:13,さいとうくにお,kunio@kuniokunio,4,china,exective
+2024-01-16 12:39:17,さいとうくにお,kunio@kuniokunio,4,china,exective
+2024-01-16 12:41:42,さいとうくにお,kunio@kuniokunio,4,china,exective
+2024-01-16 12:44:42,くにお,kunio@kuniokunio,3,meet,3000
+2024-01-16 12:45:14,くにお,kunio@kuniokunio,3,meet,3000
+2024-01-16 12:46:10,くにお,kunio@kuniokunio,3,meet,3000
+2024-01-16 12:52:11,,,,,5000
+2024-01-16 12:56:20,くにお,kunio@saito,3,fish,3000
